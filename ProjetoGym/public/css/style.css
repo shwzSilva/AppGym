@@ -1,0 +1,265 @@
+/* ===========================================
+   RESET + BASE
+=========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #8d8d8d, #292929 70%);
+  color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 25px;
+}
+
+/* ===========================================
+   TÍTULOS
+=========================================== */
+h1 {
+  font-size: 2.6rem;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 5px;
+  font-weight: 600;
+  letter-spacing: 1px;
+
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #c8c8c8;
+  margin-bottom: 30px;
+}
+
+/* ===========================================
+   BOTÕES
+=========================================== */
+/* ===========================================
+   RODAPÉ FIXO (BOTÕES)
+=========================================== */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 14px 0;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  z-index: 999;
+}
+
+.botao-footer {
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 12px;
+  transition: 0.25s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.botao-footer:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* espaço para o conteúdo não ficar escondido atrás do rodapé */
+body {
+  padding-bottom: 100px;
+}
+
+
+/* Vermelho padrão */
+.vermelho {
+  background: #ff4c4c;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(255, 76, 76, 0.3);
+}
+
+.vermelho:hover {
+  background: #e13a3a;
+}
+
+/* ===========================================
+   CONTAINERS E CARTÕES
+=========================================== */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.AdicionarTreino {
+  width: 95%;
+  max-width: 600px;
+  margin-top: 25px;
+  padding: 30px;
+  border-radius: 18px;
+
+  /* Glassmorphism + brilho elegante */
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.05);
+}
+
+/* ===========================================
+   FORMULÁRIOS
+=========================================== */
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+label {
+  font-weight: 500;
+  color: #eee;
+}
+
+input {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+  padding: 12px;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.25s ease;
+}
+
+input:focus {
+  border-color: #fff;
+}
+
+/* Inputs lado a lado */
+.linha-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.linha-inputs input {
+  flex: 1 1 48%;
+}
+
+/* Botão de adicionar */
+.adicionar {
+  margin-top: 10px;
+  background: #ffffff;
+  color: #000;
+  border-radius: 12px;
+  padding: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s;
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.1);
+}
+
+.adicionar:hover {
+  background: #e8e8e8;
+  transform: translateY(-2px);
+}
+
+/* ===========================================
+   LISTA DE TREINOS
+=========================================== */
+#listaTreinos {
+  width: 95%;
+  max-width: 600px;
+  margin-top: 30px;
+}
+
+.treino {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 18px;
+  border-radius: 16px;
+  margin-bottom: 18px;
+  transition: 0.25s ease;
+  backdrop-filter: blur(10px);
+}
+
+.treino:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.treino h3 {
+  color: #fff;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.treino p {
+  color: #d0d0d0;
+  font-size: 0.95rem;
+  margin: 4px 0;
+}
+
+/* Botões de ações */
+.acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.acoes button {
+  padding: 9px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+/* Lista vazia */
+.vazio {
+  text-align: center;
+  color: #d8d8d8;
+  margin-top: 40px;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* ===========================================
+   RESPONSIVIDADE
+=========================================== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .AdicionarTreino {
+    padding: 24px;
+  }
+
+  .linha-inputs input {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  body {
+    padding: 18px;
+  }
+  
+}
