@@ -1,45 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Adicionar Treino</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
-  <h1>Adicionar Treino</h1>
 
-  <div class="AdicionarTreino">
-    <div class="campo">
-      <label>Nome do exercício:</label>
-      <input type="text" id="nomeExercicio" placeholder="Ex: Supino reto">
+  <!-- CABEÇALHO -->
+  <header>
+    <h1>Adicionar Treino</h1>
+    <h2>Registre seu exercício</h2>
+  </header>
 
-      <label>Número de séries:</label>
-      <input type="number" id="numSeries" placeholder="Ex: 4">
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="container">
 
-      <label>Repetições e Peso (por série):</label>
-      <div class="linha-inputs">
-        <input type="text" id="rep1" placeholder="Reps 1">
-        <input type="text" id="peso1" placeholder="Peso 1 (kg)">
-        <input type="text" id="rep2" placeholder="Reps 2">
-        <input type="text" id="peso2" placeholder="Peso 2 (kg)">
-        <input type="text" id="rep3" placeholder="Reps 3">
-        <input type="text" id="peso3" placeholder="Peso 3 (kg)">
-        <input type="text" id="rep4" placeholder="Reps 4">
-        <input type="text" id="peso4" placeholder="Peso 4 (kg)">
+    <section class="card">
+      <div class="campo">
+
+        <label for="nomeExercicio">Nome do exercício</label>
+        <input 
+          type="text" 
+          id="nomeExercicio" 
+          placeholder="Ex: Supino reto" 
+        />
+
+        <label for="numSeries">Número de séries</label>
+        <input 
+          type="number" 
+          id="numSeries" 
+          placeholder="Ex: 4" 
+        />
+
+        <label>Repetições e peso (por série)</label>
+
+        <div class="linha-inputs">
+          <input type="number" id="rep1" placeholder="Reps 1" />
+          <input type="number" id="peso1" placeholder="Peso 1 (kg)" />
+        </div>
+
+        <div class="linha-inputs">
+          <input type="number" id="rep2" placeholder="Reps 2" />
+          <input type="number" id="peso2" placeholder="Peso 2 (kg)" />
+        </div>
+
+        <div class="linha-inputs">
+          <input type="number" id="rep3" placeholder="Reps 3" />
+          <input type="number" id="peso3" placeholder="Peso 3 (kg)" />
+        </div>
+
+        <div class="linha-inputs">
+          <input type="number" id="rep4" placeholder="Reps 4" />
+          <input type="number" id="peso4" placeholder="Peso 4 (kg)" />
+        </div>
+
+        <button class="btn adicionar">Adicionar Treino</button>
+
       </div>
+    </section>
 
-      <button class="adicionar">Adicionar</button>
-    </div>
-  </div>
+  </main>
 
-  <div class="container">
-    <div class="footer">
-      <a href="lista.html" class="botao-footer">Abrir Lista</a>
-      <a href="index.html" class="botao-footer">Início</a>
-    </div>
-  </div>
+  <!-- RODAPÉ FIXO -->
+  <footer class="footer">
+    <a href="index.html">Início</a>
+    <a href="lista.html">Lista</a>
+  </footer>
 
+  <!-- SCRIPT -->
   <script>
     const adicionarBtn = document.querySelector('.adicionar');
 
@@ -50,17 +81,17 @@
       const series = document.getElementById('numSeries').value;
 
       const reps = [
-        document.getElementById('rep1').value,
-        document.getElementById('rep2').value,
-        document.getElementById('rep3').value,
-        document.getElementById('rep4').value
+        rep1.value,
+        rep2.value,
+        rep3.value,
+        rep4.value
       ];
 
       const pesos = [
-        document.getElementById('peso1').value,
-        document.getElementById('peso2').value,
-        document.getElementById('peso3').value,
-        document.getElementById('peso4').value
+        peso1.value,
+        peso2.value,
+        peso3.value,
+        peso4.value
       ];
 
       if (!nome || !series || reps.some(r => !r) || pesos.some(p => !p)) {
@@ -70,7 +101,7 @@
 
       const treino = { nome, series, reps, pesos };
 
-      let treinos = JSON.parse(localStorage.getItem('treinos')) || [];
+      const treinos = JSON.parse(localStorage.getItem('treinos')) || [];
       treinos.push(treino);
       localStorage.setItem('treinos', JSON.stringify(treinos));
 
@@ -78,5 +109,6 @@
       alert('✅ Treino adicionado com sucesso!');
     });
   </script>
+
 </body>
 </html>
